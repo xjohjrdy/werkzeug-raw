@@ -64,6 +64,7 @@ def environ(raw):
     :raises: `ValueError`
     """
     request = RawHTTPRequest(raw)
+    request.connection = None
 
     if request.error_code:
         raise BadRequestSyntax
